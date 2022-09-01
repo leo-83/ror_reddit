@@ -25,10 +25,14 @@ Rails.application.routes.draw do
     # rails g way 
     # resources :name ofcontroller 
     # handles the main CRUD actions 
+    # only do two levels deep
     resources :subs do
       resources :topics
     end
 
+    resources :topics, except: [:index, :show, :create, :update, :destroy] do
+      resources :comments
+    end
 # model with a parent and child then we need to do a do block
 # only do two levels deep
     # resources :parent1 do
