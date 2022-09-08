@@ -4,13 +4,13 @@
 # we need to reset before we create 
 Sub.delete_all 
 
-Sub.create(title: 'Food')
-Sub.create(title: 'Travel')
-Sub.create(title: 'Tech')
+Sub.create(title: 'Zelda')
+Sub.create(title: 'Ganondorf')
+Sub.create(title: 'Link')
 
 5.times do
   Sub.create(
     # faker helps out with giving fake data
-    title: Faker::Games::SuperMario.character
+    title: Faker::Games::Zelda.character
   )
 end
